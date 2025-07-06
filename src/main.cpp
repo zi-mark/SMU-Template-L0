@@ -25,7 +25,6 @@
  */
 
 #include "vex.h"
-#include "robot-config.h"
 
 using namespace vex;
 
@@ -85,7 +84,7 @@ void Stop(vex::brakeType mode = brakeType::brake){
 
 //内置编码器直走
 void Go(double target, double v, velocityUnits vu){
-    target = target * 360 / (2 * Pi * WheelRadius * ChasisRatio);
+    target = target * 360 / (2 * 3.1415926 * WheelRadius * ChasisRatio);
     L1.spinFor(target, deg, v, vu, 0);
     L2.spinFor(target, deg, v, vu, 0);
     L3.spinFor(target, deg, v, vu, 0); 
